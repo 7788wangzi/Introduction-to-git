@@ -170,7 +170,33 @@ List all remote branches
 git branch -r
 ```
 
-#### 3. Issues
+#### 3. Work with multiple branch
+In order to keep main branch to be always the workable branch:
+- When main branch is updated after working branch being created, Always Use `git rebase` to make sure the integration is done in working branch and everything works fine before pull request to main branch.
+- If you use `git merge` to merge changes back to main branch directly without `git rebase`, you have no idea whether the integration works or not after merged to main. In this way, you cannot keep main a workable branch at all times.
+
+**Usage of `git rebase`:**
+Before rebase your working branch M1, you should pull the latest main branch to your local.
+```git
+git checkout main
+git fetch --all
+git pull origin main
+```
+
+Swtich to M1 branch and run rebase command:
+```git
+git checkout M1
+git rebase main
+```
+then, it switches to a new branch for resolving the merge conflicts, Pls manually edit the files to resolve conflicts, then run following commands to continue the rebase.
+```git
+git add -A
+git commit -m "resolve conflicts"
+git rebase --continue
+```
+Then, it switches back to M1 branch and it's rebased.
+
+#### 4. Issues
 
 if you runinto following issues
 
