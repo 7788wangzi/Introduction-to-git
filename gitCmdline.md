@@ -148,6 +148,18 @@ merge a branch to current branch
 
 	git merge 1118
 
+merge a branch to current branch, overwirte the current branch with another branch.
+
+```
+git merge -X theirs 1118
+```
+
+it support merge from remote branch also:
+
+```
+git merge -X theirs origin/1118
+```
+
 Overwrite the local branch with the remote branch, when your commit in local branch is ahead of the remote branch, and you don't want to keep the local changes, then you could overwrite the branch with the remote branch
 
 ```cmd
