@@ -1,3 +1,4 @@
+abc
 ## Brief introduction to Git
 **Git** is a *distributed* version control system, which is a bit different from the team foundation server(the team foundation server is *centralized* VCS). In git, the **repository** is an important concept, data are stored in repository. Server has a repository on server, client computers have local repository on themselves. Therefore, in git system, each client computer has a full database, you no longer need to connect to server and check-out a file before you want to modify the file. That comes two benefits:  
 
